@@ -4,27 +4,30 @@ import conch from './assets/conch-shell-mic.svg'
 import MasImageList from './components/MasImageList';
 import VideoList from './components/VideoList.jsx';
 import DrawerAppBar from './components/DrawAppBar.jsx';
-import Bio from './components/bio.jsx';
+import Vitae from './components/Vitae.jsx';
 import Statement from './components/Statement.jsx';
 import ContactInfo from './components/Contact.jsx';
+// import {Router} from 'react-router-dom';
+import Home from './components/Home.jsx';
 
 
 export default function App() {
   return (
 
-    <div  style={{position:'relative'}} id='home'>
+    <div  style={{position:'relative'}} >
       <DrawerAppBar />
       {/* <h1 style={{marginLeft:'300px', marginTop:'100px', zIndex: 10}}>Jonathan Coté</h1>
       <h4 style={{marginLeft:'370px', marginTop:'-20px', zIndex: 10}}>New Media Artist</h4> */}
-      <div name='Home' style={{ position: 'relative', marginLeft:'auto', marginRight:'auto', width:'90%', height:'700px'}}>
+      {/* <div name='Home' style={{ position: 'relative', marginLeft:'auto', marginRight:'auto', width:'90%', height:'700px'}}>
         <h1 style={{marginLeft:'300px', marginTop:'100px', zIndex: 10}}>Jonathan Coté</h1>
         <h4 style={{marginLeft:'370px', marginTop:'-20px', zIndex: 10}}>New Media Art</h4>
         <img src={conch2} alt="conch" style={{position:'absolute', top:'50px',right:'200px'}} />
         <img src={conch} alt="conch-shell" />
-      </div>     
+      </div>      */}
       {/* <div style={{background:'98D4C2', height:'330px', display:'block',marginTop:'-200px', marginLeft:'500px', marginRight:'auto', width:'90%'}}>
 
       </div> */}
+      <Home/>
       <div name='Images' >
         <MasImageList id='images' items={itemData} sx={{position:'absolute', top:'300px'}}/>         
       </div>
@@ -32,7 +35,7 @@ export default function App() {
         <VideoList id='videos' items={videoData} sx={{position:'absolute', top:'1600px'}}/>         
       </div>
       <Statement id='statement' sx={{position:'absolute', top:'2400px'}}/> 
-      <Bio id='bio' sx={{position:'absolute', top:'3200px'}}/>
+      <Vitae id='vitae' sx={{position:'absolute', top:'3200px'}}/>
       <ContactInfo id='contact' sx={{position:'absolute', top:'3000px'}}/>
 
     </div>

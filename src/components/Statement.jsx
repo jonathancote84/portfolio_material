@@ -1,9 +1,9 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 
 
 function Statement() {
   return (
-    <Container sx={{height:'1000px'}}>
+    <Box sx={{height:'500px'}}>
       <h4>Artist Statement</h4>
       <p>
       I work in many media from clay, paper maché, epoxy, electronics, sound, code, 3d math. The medium is a port of the work but in a lot of cases it is just what output makes sense for a given context.
@@ -13,7 +13,7 @@ function Statement() {
       </p>  
       <h4>Bio:</h4>
       <p>	The interplay between human existence in the natural world and our  Relations to the Technologies we create are a source of inspiration In my work. I see my work as creating an interfaces a means to find mergers, strange understandings and some beauty in a the cold and numerical nature of the building blocks of the Technologies we create and live with.</p>
-    </Container>
+    </Box>
 
   );
 }

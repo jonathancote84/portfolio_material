@@ -1,11 +1,13 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 
 
 function ContactInfo() {
   return (
-    <Container sx={{height:'3000px', zIndex:'20'}}>
-      <h3>Hello World</h3>
-    </Container>
+    <Box sx={{height:'200px', zIndex:'20'}}>
+      <h3>contact me:</h3>
+      <p>@infra.uncertain</p>
+      <p>jonathancotemeogroup@gmail.com</p>
+    </Box>
   );
 }
 

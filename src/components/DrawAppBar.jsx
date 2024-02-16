@@ -25,7 +25,7 @@ const navItems = [
   {id:2, title: 'Video', link: 'video', amount: '2370'},
   {id:3, title: 'Artist Statement', link: 'artist-statement', amount: '2750'},
   {id:4, title: 'Bio', link: 'bio', amount: '3000'},
-  {id:5, title: 'CV', link: 'cv',  amount: '3900'},
+  {id:5, title: 'CV', link: 'cv',  amount: '3500'},
   {id:6, title: 'Contact', link: 'contact',  amount: '5500'}
 ];
 
@@ -72,7 +72,7 @@ function DrawerAppBar(props) {
               >
                 <ListItemText primary={item.title} />
               </ListItemButton>            
-            {/* </Link> */}
+            {/* </Link> */}git 
           </ListItem>
         ))}
       </List>
