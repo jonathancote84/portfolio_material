@@ -1,30 +1,40 @@
 import * as React from 'react';
 import conch2 from './assets/conch-shell-mic-outline.svg';
 import conch from './assets/conch-shell-mic.svg'
-// import Box from '@mui/material/Box';
-// import ImageList from '@mui/material/ImageList';
-// import ImageListItem from '@mui/material/ImageListItem';
 import MasImageList from './components/MasImageList';
+import VideoList from './components/VideoList.jsx';
 import DrawerAppBar from './components/DrawAppBar.jsx';
-// import Fab from '@mui/material/Fab';
-//import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-//import ResponsiveAppBar from './components/ResponsiveAppBar';
+import Bio from './components/bio.jsx';
+import Statement from './components/Statement.jsx';
+import ContactInfo from './components/Contact.jsx';
 
 
 export default function App() {
   return (
 
-    <div>
+    <div  style={{position:'relative'}} id='home'>
       <DrawerAppBar />
-      <h1 style={{marginLeft:'300px', marginTop:'100px', zIndex: 10}}>Jonathan Coté</h1>
-      <h4 style={{marginLeft:'370px', marginTop:'-20px', zIndex: 10}}>New Media Artist</h4>
-      <div style={{background:'98D4C2', height:'330px', display:'block',marginTop:'-200px', marginLeft:'500px', marginRight:'auto', width:'90%'}}>
-      <img src={conch} alt="conch-shell" />
+      {/* <h1 style={{marginLeft:'300px', marginTop:'100px', zIndex: 10}}>Jonathan Coté</h1>
+      <h4 style={{marginLeft:'370px', marginTop:'-20px', zIndex: 10}}>New Media Artist</h4> */}
+      <div name='Home' style={{ position: 'relative', marginLeft:'auto', marginRight:'auto', width:'90%', height:'700px'}}>
+        <h1 style={{marginLeft:'300px', marginTop:'100px', zIndex: 10}}>Jonathan Coté</h1>
+        <h4 style={{marginLeft:'370px', marginTop:'-20px', zIndex: 10}}>New Media Art</h4>
+        <img src={conch2} alt="conch" style={{position:'absolute', top:'50px',right:'200px'}} />
+        <img src={conch} alt="conch-shell" />
+      </div>     
+      {/* <div style={{background:'98D4C2', height:'330px', display:'block',marginTop:'-200px', marginLeft:'500px', marginRight:'auto', width:'90%'}}>
+
+      </div> */}
+      <div name='Images' >
+        <MasImageList id='images' items={itemData} sx={{position:'absolute', top:'300px'}}/>         
       </div>
-      <div style={{ display:'block', marginLeft:'auto', marginRight:'auto', width:'87%'}}>
-      <img src={conch2} alt="conch" />
+      <div name='Videos' >
+        <VideoList id='videos' items={videoData} sx={{position:'absolute', top:'1600px'}}/>         
       </div>
-      <MasImageList items={itemData}/> 
+      <Statement id='statement' sx={{position:'absolute', top:'2400px'}}/> 
+      <Bio id='bio' sx={{position:'absolute', top:'3200px'}}/>
+      <ContactInfo id='contact' sx={{position:'absolute', top:'3000px'}}/>
+
     </div>
 
   );   
@@ -92,4 +102,43 @@ const itemData = [
     img: 'https://res.cloudinary.com/dsuvanyvt/image/upload/v1707877889/images%20art/10414492_10152848677068071_2602939937771340837_n_vzxmk0.jpg',
     title: 'radiance',
   },
+];
+
+const videoData = [
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/c_limit,h_500,w_800/v1707879347/art%20videos/lung.jpg',
+    title: 'lung',
+    publicId: 'art%20videos/lung.mp4',
+  },
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/v1707879142/art%20videos/muteface01.jpg',
+    title: 'muteface01',
+    publicId: 'art%20videos/muteface01.mp4',
+  },
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/v1707879164/art%20videos/timestretch01_eornr1.jpg',
+    title: 'timeStretch01',
+    publicId: 'art%20videos/timestretch01_eornr1.mp4',
+  },
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/v1707879391/art%20videos/untitled_720p_ckfr9x.jpg',
+    title: 'street',
+    publicId: 'art%20videos/untitled_720p_ckfr9x.mp4',
+  },
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/v1707878939/art%20videos/branchingtest_pb01_p0ayf1.jpg',
+    title: 'lungTest',
+    publicId: 'art%20videos/branchingtest_pb01_p0ayf1.mp4',
+  },
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/v1707879196/art%20videos/Untitled_1_bwv3n8.jpg',
+    title: 'Stories',
+    publicId: 'art%20videos/Untitled_1_bwv3n8.mp4',
+  },
+  {
+    img: 'https://res.cloudinary.com/dsuvanyvt/video/upload/v1707879416/art%20videos/Untitled_nmxshy.jpg',
+    title: 'cave',
+    publicId: 'art%20videos/Untitled_nmxshy',
+  }
+
 ];

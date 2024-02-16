@@ -14,9 +14,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { animateScroll } from 'react-scroll';
+
+
 
 const drawerWidth = 150;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+  {id:0, title: 'Home', link: 'home', amount: '0'},
+  {id:1, title: 'Images', link: 'images', amount: '800'},
+  {id:2, title: 'Video', link: 'video', amount: '1650'},
+  {id:3, title: 'Artist Statement', link: 'artist-statement', amount: '2000'},
+  {id:4, title: 'Bio', link: 'bio', amount: '2500'},
+  {id:5, title: 'CV', link: 'cv',  amount: '3300'},
+  {id:6, title: 'Contact', link: 'contact',  amount: '5500'}
+];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -26,6 +37,18 @@ function DrawerAppBar(props) {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const handleLinkClick = (item) => {
+    // e.preventDefault();
+    const options = {
+      duration: 500,
+      smooth: true
+    }
+    console.log('link clicked', item);
+    animateScroll.scrollTo(item.amount, options);
+    
+ 
+  }
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} style={{ opacity:'.5', boxShadow: 'none'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -34,15 +57,30 @@ function DrawerAppBar(props) {
       <Divider />
       <List style={{ backgroundColor:'rgba(190,221,158,150)', boxShadow: 'none'}}>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+          <ListItem key={item.id} disablePadding>
+            {/* <Link
+              to={item.link}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              key={item.id}
+            > */}
+              <ListItemButton sx={{ textAlign: 'center' }}
+              onClick={() => handleLinkClick(item)}
+              >
+                <ListItemText primary={item.title} />
+              </ListItemButton>            
+            {/* </Link> */}
+
           </ListItem>
         ))}
       </List>
     </Box>
   );
+
+  
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -69,9 +107,22 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+              // add scroll link around button
+              // <Link
+              // to={item.link}
+              // spy={true}
+              // smooth={true}
+              // offset={-100}
+              // duration={500}
+              // activeClass="active"
+              // key={item.id}
+              // >
+                <Button key={item.id} sx={{ color: '#fff' }} 
+                onClick={() => handleLinkClick(item)}
+                >
+                  {item.title}
+                </Button> 
+              // </Link>
             ))}
           </Box>
         </Toolbar>

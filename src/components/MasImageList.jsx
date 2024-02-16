@@ -1,10 +1,17 @@
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
 import PropTypes  from 'prop-types';
 
 
 export default function MasImageList(props) {
+
+  const handleImageClick = (item) => {
+    console.log('image clicked', item);
+  }
+
   return (
   
     <Box sx={{display:'flex' }}>
@@ -19,10 +26,29 @@ export default function MasImageList(props) {
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
+              onClick={() => handleImageClick(item)}
             />
           </ImageListItem>
         ))}
       </ImageList>
+      {/* <Modal
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500
+        }}
+      >
+        <Fade in={open} timeout={500} className={classes.img}>
+          <img
+            src={image}
+            alt="asd"
+            style={{ maxHeight: "90%", maxWidth: "90%" }}
+          />
+        </Fade>
+      </Modal> */}
     </Box>
   );
 }
