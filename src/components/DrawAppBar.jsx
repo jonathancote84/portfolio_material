@@ -22,10 +22,10 @@ const drawerWidth = 150;
 const navItems = [
   {id:0, title: 'Home', link: 'home', amount: '0'},
   {id:1, title: 'Images', link: 'images', amount: '800'},
-  {id:2, title: 'Video', link: 'video', amount: '1650'},
-  {id:3, title: 'Artist Statement', link: 'artist-statement', amount: '2000'},
-  {id:4, title: 'Bio', link: 'bio', amount: '2500'},
-  {id:5, title: 'CV', link: 'cv',  amount: '3300'},
+  {id:2, title: 'Video', link: 'video', amount: '2370'},
+  {id:3, title: 'Artist Statement', link: 'artist-statement', amount: '2750'},
+  {id:4, title: 'Bio', link: 'bio', amount: '3000'},
+  {id:5, title: 'CV', link: 'cv',  amount: '3900'},
   {id:6, title: 'Contact', link: 'contact',  amount: '5500'}
 ];
 
@@ -73,7 +73,6 @@ function DrawerAppBar(props) {
                 <ListItemText primary={item.title} />
               </ListItemButton>            
             {/* </Link> */}
-
           </ListItem>
         ))}
       </List>
@@ -94,18 +93,18 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { md: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { sm: 'none', md: 'block' } }}
           >
             JJC
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { sm: 'none', md: 'block' } }}>
             {navItems.map((item) => (
               // add scroll link around button
               // <Link
@@ -137,7 +136,7 @@ function DrawerAppBar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { sm: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
           style={{ opacity:'.5'}}
